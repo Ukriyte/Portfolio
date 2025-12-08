@@ -59,6 +59,8 @@ export const Hero = () => {
                 <span className="text-muted-foreground">,</span>{" "}
                 <span className="text-terminal-orange">"ETL Pipelines"</span>
                 <span className="text-muted-foreground">,</span>{" "}
+                <span className="text-terminal-orange">"API Design & Reliability"</span>
+                <span className="text-muted-foreground">,</span>{" "}
                 <span className="text-terminal-orange">"System Design"</span>
                 <span className="text-terminal-yellow">]</span>
               </div>
