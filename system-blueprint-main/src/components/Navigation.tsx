@@ -10,7 +10,7 @@ const navItems = [
 ];
 
 // 👇 PUT YOUR RESUME LINK HERE
-const RESUME_URL = "https://drive.google.com/file/d/1Jxjyreg_o6ebCDZc_EsR-eVREGF1T6Ou/view?usp=sharing";
+const RESUME_URL = "https://drive.google.com/file/d/1tQ7w10Lr3XbeinsuvvhWUOR2fI6Vzw_k/view?usp=sharing";
 
 export const Navigation = () => {
   return (
