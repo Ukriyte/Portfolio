@@ -52,14 +52,14 @@ export const Hero = () => {
                 <span className="text-muted-foreground">,</span>
               </div>
               <div className="pl-4">
-                <span className="text-terminal-green">focus</span>
+                <span className="text-terminal-green">strengths:</span>
                 <span className="text-muted-foreground">:</span>{" "}
                 <span className="text-terminal-yellow">[</span>
                 <span className="text-terminal-orange">"SQL Optimization"</span>
                 <span className="text-muted-foreground">,</span>{" "}
-                <span className="text-terminal-orange">"ETL Pipelines"</span>
-                <span className="text-muted-foreground">,</span>{" "}
                 <span className="text-terminal-orange">"API Design & Reliability"</span>
+                <span className="text-muted-foreground">,</span>{" "}
+                <span className="text-terminal-orange">"High-volume data processing"</span>
                 <span className="text-muted-foreground">,</span>{" "}
                 <span className="text-terminal-orange">"System Design"</span>
                 <span className="text-terminal-yellow">]</span>
