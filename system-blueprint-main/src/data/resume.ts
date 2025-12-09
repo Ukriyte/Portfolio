@@ -24,7 +24,7 @@ export const experience = [
     company: "E-Ring Inc.",
     role: "Software Engineer I",
     location: "Hyderabad, Telangana",
-    period: "July 2024 - November 2024",
+    period: "July 2025 - Present",
     achievements: [
       {
         text: "Replaced cursor-based extraction with BCP-based pipelines, accelerating a monthly county-wide ETL job (1M+ records) from 8 hours → 45 minutes",
