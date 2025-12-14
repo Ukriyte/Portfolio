@@ -18,7 +18,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <a href="#" className="font-mono text-lg font-semibold text-primary">
+            <a href="#" className="hidden md:block font-mono text-lg font-semibold text-primary">
               <span className="text-muted-foreground">~/</span>anurag.dev
             </a>
             <div className="hidden md:flex items-center gap-6">
