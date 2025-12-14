@@ -31,7 +31,7 @@ export const Navigation = () => {
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href={RESUME_URL}
+              href={profile.resume}
               target="_blank"
               rel="noopener noreferrer"
               className="px-2 sm:px-3 py-1.5 rounded-md bg-accent text-accent-foreground hover:bg-accent/80 transition-colors font-mono text-xs whitespace-nowrap"
