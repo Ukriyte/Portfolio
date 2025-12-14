@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Terminal, MapPin, ArrowDown } from "lucide-react";
+import { Terminal, MapPin} from "lucide-react";
 import { profile } from "@/data/resume";
 
 export const Hero = () => {
