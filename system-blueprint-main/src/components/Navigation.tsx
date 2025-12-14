@@ -10,7 +10,7 @@ const navItems = [
 ];
 
 // 👇 PUT YOUR RESUME LINK HERE
-const RESUME_URL = "https://drive.google.com/file/d/1tQ7w10Lr3XbeinsuvvhWUOR2fI6Vzw_k/view?usp=sharing";
+const RESUME_URL = "https://drive.google.com/your-resume-link";
 
 export const Navigation = () => {
   return (
@@ -29,12 +29,12 @@ export const Navigation = () => {
               ))}
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
               href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-md bg-accent text-accent-foreground hover:bg-accent/80 transition-colors font-mono text-xs"
+              className="px-2 sm:px-3 py-1.5 rounded-md bg-accent text-accent-foreground hover:bg-accent/80 transition-colors font-mono text-xs whitespace-nowrap"
             >
               Resume
             </a>
@@ -51,13 +51,13 @@ export const Navigation = () => {
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 rounded-md hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
+              className="hidden sm:block p-1.5 rounded-md hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
             >
               <Linkedin className="w-4 h-4" />
             </a>
             <a
               href={`mailto:${profile.email}`}
-              className="p-1.5 rounded-md hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
+              className="hidden sm:block p-1.5 rounded-md hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
             >
               <Mail className="w-4 h-4" />
             </a>
