@@ -120,7 +120,7 @@ export const Hero = () => {
             </span>
             <span className="metric-badge">8hr → 45min ETL</span>
             <span className="metric-badge">400+ DSA Problems</span>
-            <span className="metric-badge">Global Rank 279</span>
+            <span className="metric-badge">Hackathon Win 🏆</span>
           </motion.div>
         </motion.div>
 
