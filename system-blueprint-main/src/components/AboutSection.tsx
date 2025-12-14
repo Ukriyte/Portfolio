@@ -65,8 +65,8 @@ export const AboutSection = () => {
                 color="terminal-cyan"
               />
               <StatCard
-                value="279"
-                label="Global Rank"
+                value="1+"
+                label="Hackathon Winner"
                 color="terminal-yellow"
               />
               <StatCard
