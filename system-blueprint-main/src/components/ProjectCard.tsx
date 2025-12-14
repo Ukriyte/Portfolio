@@ -73,20 +73,22 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-md bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+            className="p-2 md:px-3 md:py-1.5 rounded-md bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-1.5"
             aria-label="View on GitHub"
           >
             <Github className="w-4 h-4" />
+            <span className="hidden md:inline text-xs font-mono">GitHub</span>
           </a>
           {project.live && (
             <a
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-md bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors"
+              className="p-2 md:px-3 md:py-1.5 rounded-md bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center gap-1.5"
               aria-label="View live demo"
             >
               <ExternalLink className="w-4 h-4" />
+              <span className="hidden md:inline text-xs font-mono">Live</span>
             </a>
           )}
           {project.demo && (
@@ -94,10 +96,11 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-md bg-secondary hover:bg-terminal-red hover:text-foreground transition-colors"
+              className="p-2 md:px-3 md:py-1.5 rounded-md bg-secondary hover:bg-terminal-red hover:text-foreground transition-colors flex items-center gap-1.5"
               aria-label="Watch demo video"
             >
               <Play className="w-4 h-4" />
+              <span className="hidden md:inline text-xs font-mono">Demo</span>
             </a>
           )}
         </div>
@@ -115,7 +118,8 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.4 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-lg border border-border bg-secondary/30 group/img"
+            className="relative overflow-hidden rounded-lg border border-border bg-secondary/30 group/img cursor-pointer"
+            onClick={() => window.open(project.live || project.github, '_blank')}
           >
             {projectImage ? (
               <>
