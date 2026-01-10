@@ -50,7 +50,7 @@ export const Footer = () => {
           </div>
 
           <p className="font-mono text-xs text-muted-foreground">
-            © 2024 {profile.name}
+            © 2025 {profile.name}
           </p>
         </div>
       </div>
