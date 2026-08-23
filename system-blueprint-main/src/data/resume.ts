@@ -5,7 +5,7 @@ export const profile = {
   phone: "+91 7696090258",
   location: "Bengaluru, Karnataka",
   linkedin: "https://www.linkedin.com/in/AnuragChugh404",
-  resume: "https://drive.google.com/file/d/15DAedFrOAgJWhT1QYNy-mVGlNNcEX12l/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1WBBMgGIxvs8aNSEBFFCjuGA3whPXiEWK/view?usp=sharing",
   github: "https://github.com/Ukriyte",
   leetcode: "https://leetcode.com/u/nrgchugh/",
   summary: "Backend-focused software engineer with hands-on experience in SQL performance optimization, ETL pipelines, and legacy system modernization. Strong in building reliable backend services, scalable REST APIs, and shipping production improvements using JavaScript and TypeScript. Experienced with high-volume data workloads, debugging distributed systems, and end-to-end project ownership.",
@@ -20,31 +20,87 @@ export const skills = {
   concepts: ["System Design (HLD/LLD)", "Data Structures", "Algorithms", "OOP", "SQL Tuning"],
 };
 
-export const experience = [
+export type AchievementMetric =
+  | { before: number; after: number; unit: string; type: string }
+  | { improvement: number; unit: string; type: string };
+
+export type ExperienceAchievement = {
+  text: string;
+  metrics?: AchievementMetric;
+};
+
+export type ExperienceEntry = {
+  company: string;
+  role: string;
+  location: string;
+  period: string;
+  achievements: ExperienceAchievement[];
+  techStack: string[];
+};
+
+export const experience: ExperienceEntry[] = [
+  {
+    company: "Osfin.ai",
+    role: "Software Development Engineer I",
+    location: "Bengaluru, Karnataka",
+    period: "February 2026 - Present",
+    achievements: [
+      {
+        text: "Developed dispute and chargeback lifecycle workflows across UPI, IMPS, and AEPS, covering state transitions, actor permissions, turnaround-time rules, and failure handling.",
+      },
+      {
+        text: "Improved concurrency safety for approval and batch workflows through pre-validation, database uniqueness constraints, and controlled exception handling to prevent duplicate processing.",
+      },
+      {
+        text: "Strengthened batch reliability with retry mechanisms, recovery of stuck execution states, configurable health probes, and backward-compatible Liquibase migrations.",
+      },
+      {
+        text: "Built and tested IDFC Bank CBS Hold API integrations for enquiry, placement, recovery, and removal, covering validation, failure handling, and reconciliation workflows.",
+      },
+    ],
+    techStack: ["Java", "Spring Boot", "Spring Batch", "REST APIs", "Oracle", "Liquibase", "JUnit"],
+  },
   {
     company: "E-Ring Inc.",
     role: "Software Engineer I",
     location: "Hyderabad, Telangana",
-    period: "July 2025 - Present",
+    period: "July 2025 - November 2025",
     achievements: [
       {
-        text: "Replaced cursor-based extraction with BCP-based pipelines, accelerating a monthly county-wide ETL job (1M+ records) from 8 hours → 45 minutes",
+        text: "Re-architected a county-wide ETL workflow using BCP-driven pipelines, reducing processing time for 1M+ records from 8 hours to 45 minutes.",
         metrics: { before: 8 * 60, after: 45, unit: "min", type: "performance" },
       },
       {
-        text: "Built T-SQL monitoring scripts for billing and reconciliation, cutting manual validation by 20% and improving audit turnaround time",
-        metrics: { improvement: 20, unit: "%", type: "efficiency" },
-      },
-      {
-        text: "Migrated DevExpress and VB logic to plain JavaScript inside ASP.NET pages, reducing page load time by 18%",
-        metrics: { improvement: 18, unit: "%", type: "performance" },
+        text: "Developed T-SQL monitoring and reconciliation scripts for billing workflows, reducing manual validation effort and improving audit readiness.",
       },
     ],
-    techStack: ["SQL Server", "T-SQL", "Query Store", "Azure DevOps", "SSMS", "JavaScript", "ASP.NET"],
+    techStack: ["SQL Server", "T-SQL", "BCP", "ETL", "SSMS", "Azure DevOps"],
   },
 ];
 
 export const projects = [
+  {
+    id: "pokernight",
+    name: "PokerNight",
+    subtitle: "Real-Time Multiplayer Poker",
+    description: "Server-authoritative poker platform with real-time gameplay, reconnect recovery, and independently testable backend layers.",
+    github: "https://github.com/Ukriyte/PokerNight",
+    techStack: ["Java 21", "Spring Boot", "WebSockets/STOMP", "JUnit", "REST APIs"],
+    architecture: {
+      layers: [
+        { name: "Game Engine", components: ["Betting Rounds", "Side Pots", "Showdown Evaluator"] },
+        { name: "Application", components: ["Command Validation", "Idempotency", "Room State"] },
+        { name: "Transport", components: ["WebSockets", "STOMP Topics", "Reconnect Recovery"] },
+        { name: "Automation", components: ["Bot Lifecycle", "Decision Adapter", "Turn Pacing"] },
+      ],
+    },
+    features: [
+      "Server-authoritative engine with forced blinds, all-ins, side pots, dealer rotation, and chip-conservation invariants.",
+      "Per-room command serialization and idempotent command handling preserve consistency under concurrent actions and retries.",
+      "Bot lifecycle and decision adapter reuse the same validated command path as human players.",
+    ],
+    category: "Backend",
+  },
   {
     id: "neural-drive",
     name: "Neural Drive",
@@ -75,7 +131,6 @@ export const projects = [
     description: "Full-stack task management with voice input and NLP-style parsing",
     github: "https://github.com/Ukriyte/TaskFlow-VELO",
     live: "https://echo-crud-craft.lovable.app/",
-    demo: "https://drive.google.com/file/d/1NJDpUZGoh1rUPnR7frNbxokKaBexVOff/view",
     techStack: ["MongoDB", "Express", "React", "Node.js", "NLP"],
     architecture: {
       layers: [
@@ -94,25 +149,23 @@ export const projects = [
   },
   {
     id: "url-shortener",
-    name: "URL Shortener",
-    subtitle: "Scalable Link Management Service",
-    description: "High-performance URL shortener with Redis caching and analytics",
+    name: "Scalable URL Shortener",
+    subtitle: "High-Performance Link Management Service",
+    description: "Stateless REST API service with Redis-backed redirect caching, token-bucket rate limiting, and safe short-code generation.",
     github: "https://github.com/Ukriyte/URL-Shortener/",
-    demo: "https://www.youtube.com/watch?v=vbokstNosZM",
-    techStack: ["TypeScript", "Node.js", "Redis", "PostgreSQL", "REST APIs"],
+    techStack: ["TypeScript", "Node.js", "Redis", "REST APIs", "Express"],
     architecture: {
       layers: [
-        { name: "API", components: ["REST Endpoints", "Rate Limiter", "Validator"] },
-        { name: "Cache", components: ["Redis", "Token Bucket", "TTL Manager"] },
-        { name: "Service", components: ["URL Generator", "Analytics", "Redirector"] },
-        { name: "Storage", components: ["PostgreSQL", "URL Table", "Analytics Table"] },
+        { name: "API", components: ["Create URL", "Resolve Redirect", "Validation"] },
+        { name: "Cache", components: ["Redis", "Hot Redirects", "TTL Strategy"] },
+        { name: "Protection", components: ["Token Bucket", "Abuse Limits", "Stateless Handlers"] },
+        { name: "Service", components: ["Short-Code Generator", "Collision Checks", "Safe Redirects"] },
       ],
     },
     features: [
-      "Redis caching and PostgreSQL persistence",
-      "Distributed token-bucket rate limiting for abuse prevention",
-      "Analytics to track requests, latency, and errors",
-      "Safe redirection logic and unique ID generation",
+      "Redis-backed caching separates the latency-sensitive read path from URL creation and persistence.",
+      "Focused REST API paths keep URL creation and redirect resolution stateless and independently deployable.",
+      "Token-bucket rate limiting, input validation, and collision-safe short-code generation protect public APIs.",
     ],
     category: "Backend",
   },
@@ -122,7 +175,6 @@ export const projects = [
     subtitle: "Wallet Analytics Dashboard",
     description: "Web3 dashboard to visualize wallet balances, transactions, and gas usage",
     github: "https://github.com/solo-daemon/block-mint",
-    demo: "https://www.youtube.com/watch?v=SgvFoTloewM",
     techStack: ["React", "Web3", "MetaMask", "Ethers.js"],
     architecture: {
       layers: [

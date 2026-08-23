@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
-import { Building2, MapPin, Calendar, ExternalLink } from "lucide-react";
-import { experience } from "@/data/resume";
+import { Building2, MapPin, Calendar } from "lucide-react";
+import { experience, type AchievementMetric } from "@/data/resume";
 import { PerformanceChart, ImprovementBadge } from "./PerformanceChart";
+
+const isPerformanceMetric = (metric?: AchievementMetric): metric is Extract<AchievementMetric, { before: number }> =>
+  Boolean(metric && "before" in metric && "after" in metric);
+
+const isImprovementMetric = (metric?: AchievementMetric): metric is Extract<AchievementMetric, { improvement: number }> =>
+  Boolean(metric && "improvement" in metric);
 
 export const ExperienceSection = () => {
   return (
@@ -55,12 +61,12 @@ export const ExperienceSection = () => {
                   <p className="text-sm text-foreground leading-relaxed mb-3">
                     {achievement.text}
                   </p>
-                  {achievement.metrics.before && achievement.metrics.after ? (
+                  {isPerformanceMetric(achievement.metrics) ? (
                     <PerformanceChart
-                      metric={achievement.metrics as any}
+                      metric={achievement.metrics}
                       label="ETL Processing Time"
                     />
-                  ) : achievement.metrics.improvement ? (
+                  ) : isImprovementMetric(achievement.metrics) ? (
                     <ImprovementBadge
                       improvement={achievement.metrics.improvement}
                       unit={achievement.metrics.unit}

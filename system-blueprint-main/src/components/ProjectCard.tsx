@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink, Play, ArrowRight, ImageIcon } from "lucide-react";
+import { Github, ExternalLink, ArrowRight, ImageIcon } from "lucide-react";
 import { ArchitectureCard } from "./ArchitectureCard";
 
 // Project images
@@ -22,7 +22,6 @@ interface Project {
   description: string;
   github: string;
   live?: string;
-  demo?: string;
   techStack: string[];
   architecture: {
     layers: { name: string; components: string[] }[];
@@ -89,18 +88,6 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             >
               <ExternalLink className="w-4 h-4" />
               <span className="hidden md:inline text-xs font-mono">Live</span>
-            </a>
-          )}
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 md:px-3 md:py-1.5 rounded-md bg-secondary hover:bg-terminal-red hover:text-foreground transition-colors flex items-center gap-1.5"
-              aria-label="Watch demo video"
-            >
-              <Play className="w-4 h-4" />
-              <span className="hidden md:inline text-xs font-mono">Demo</span>
             </a>
           )}
         </div>
