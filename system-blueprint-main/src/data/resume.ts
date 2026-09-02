@@ -5,7 +5,7 @@ export const profile = {
   phone: "+91 7696090258",
   location: "Bengaluru, Karnataka",
   linkedin: "https://www.linkedin.com/in/AnuragChugh404",
-  resume: "https://drive.google.com/file/d/1XXnj2KoGw4kqHwv5c5qZ9znUGNZkd4VR/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1O3Tl17Mydwd0BBU1Q8k9J4-diUGeesnx/view?usp=sharing",
   github: "https://github.com/Ukriyte",
   leetcode: "https://leetcode.com/u/nrgchugh/",
   summary: "Backend-focused software engineer with hands-on experience in SQL performance optimization, ETL pipelines, and legacy system modernization. Strong in building reliable backend services, scalable REST APIs, and shipping production improvements using JavaScript and TypeScript. Experienced with high-volume data workloads, debugging distributed systems, and end-to-end project ownership.",
