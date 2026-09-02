@@ -12,17 +12,31 @@ const projects = [
 ];
 const skills = ["Java", "Spring Boot", "Spring Batch", "WebSockets", "TypeScript", "Node.js", "React", "REST APIs", "MySQL", "Oracle", "Redis", "Kubernetes", "Docker", "Liquibase"];
 
+const downloadResume = async (event: React.MouseEvent<HTMLAnchorElement>) => {
+  event.preventDefault();
+  const response = await fetch(resumePdf);
+  const blob = await response.blob();
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = "Anurag_Chugh_Resume.pdf";
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+  URL.revokeObjectURL(url);
+};
+
 export function PortfolioV2() {
   return <div className="portfolio-v2">
-    <header className="portfolio-nav"><a className="brand" href="#top">AC.</a><nav><a href="#about">About</a><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a><a href={resumePdf} target="_blank" rel="noreferrer" download="Anurag_Chugh_Resume.pdf">Resume ↗</a></nav></header>
+    <header className="portfolio-nav"><a className="brand" href="#top">AC.</a><nav><a href="#about">About</a><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a><a href={resumePdf} onClick={downloadResume}>Resume ↗</a></nav></header>
     <main id="top">
-      <section className="hero-v2"><div className="hero-copy-block"><p className="eyebrow">SOFTWARE ENGINEER · BENGALURU</p><h1>Hi, I’m Anurag. <span className="wave">💻</span></h1><p className="hero-copy">I build reliable backend systems that handle real-world scale with correctness, performance and clarity.</p><div className="hero-links"><a href="mailto:nrgchugh@gmail.com">✉ Email ↗</a><a href="https://github.com/Ukriyte" target="_blank" rel="noreferrer">◉ GitHub ↗</a><a href="https://linkedin.com/in/AnuragChugh404" target="_blank" rel="noreferrer">▣ LinkedIn ↗</a><a href={resumePdf} target="_blank" rel="noreferrer" download="Anurag_Chugh_Resume.pdf">▱ Resume ↗</a></div></div><div className="hero-photo-wrap"><img src={profilePhoto} alt="Anurag Chugh" className="hero-photo" /></div></section>
+      <section className="hero-v2"><div className="hero-copy-block"><p className="eyebrow">SOFTWARE ENGINEER · BENGALURU</p><h1>Hi, I’m Anurag. <span className="wave">💻</span></h1><p className="hero-copy">I build reliable backend systems that handle real-world scale with correctness, performance and clarity.</p><div className="hero-links"><a href="mailto:nrgchugh@gmail.com">✉ Email ↗</a><a href="https://github.com/Ukriyte" target="_blank" rel="noreferrer">◉ GitHub ↗</a><a href="https://linkedin.com/in/AnuragChugh404" target="_blank" rel="noreferrer">▣ LinkedIn ↗</a><a href={resumePdf} onClick={downloadResume}>▱ Resume ↗</a></div></div><div className="hero-photo-wrap"><img src={profilePhoto} alt="Anurag Chugh" className="hero-photo" /></div></section>
       <section className="intro-grid" id="about"><p className="section-label">01 — ABOUT</p><div><p className="large-copy">Software engineer with a B.Tech in Mechanical Engineering from IIT Roorkee. I enjoy turning messy, high-volume workflows into explicit systems with strong invariants and predictable failure modes.</p><p className="muted-copy">Outside work, I like building systems from first principles — from multiplayer game engines to infrastructure and AI tooling.</p></div></section>
       <section className="content-section" id="work"><div className="section-heading"><p className="section-label">02 — EXPERIENCE</p><p className="section-note">Production systems</p></div><div className="timeline">{experiences.map(item => <article className="timeline-item" key={item.company}><div className="timeline-meta"><span>{item.period}</span><span>{item.location}</span></div><div><h2>{item.role}</h2><p className="company">{item.company}</p><ul>{item.points.map(point => <li key={point}>{point}</li>)}</ul></div></article>)}</div></section>
       <section className="content-section" id="projects"><div className="section-heading"><p className="section-label">03 — SELECTED PROJECTS</p><p className="section-note">Things I built</p></div><div className="project-list">{projects.map((project, index) => <article className="project-card" key={project.name}><div className="project-number">0{index + 1}</div><div className="project-main"><div className="project-title-row"><div><h2>{project.name}</h2><p className="company">{project.subtitle}</p></div><a href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.name} on GitHub`}>↗</a></div><p className="project-description">{project.description}</p><p className="stack">{project.stack}</p><ul>{project.points.map(point => <li key={point}>{point}</li>)}</ul></div></article>)}</div></section>
       <section className="skills-section"><p className="section-label">04 — TOOLKIT</p><div className="skill-grid">{skills.map(skill => <span key={skill}>{skill}</span>)}</div></section>
       <section className="education-section" id="education"><p className="section-label">05 — EDUCATION</p><div><h2>B.Tech in Mechanical Engineering</h2><p className="company">Indian Institute of Technology, Roorkee · 2021 — 2025</p></div></section>
-      <section className="closing-section" id="contact"><p className="section-label">06 — SAY HELLO</p><h2>Have an interesting problem?</h2><div className="contact-stack"><a className="email-link" href="mailto:nrgchugh@gmail.com">✉ nrgchugh@gmail.com <span>↗</span></a><a className="phone-link" href="tel:+917696090258">☎ +91 76960 90258 <span>↗</span></a><a className="resume-link" href={resumePdf} target="_blank" rel="noreferrer" download="Anurag_Chugh_Resume.pdf">▱ View resume <span>↗</span></a></div><div className="closing-links"><a href="https://github.com/Ukriyte" target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/AnuragChugh404" target="_blank" rel="noreferrer">LinkedIn</a></div></section>
+      <section className="closing-section" id="contact"><p className="section-label">06 — SAY HELLO</p><h2>Have an interesting problem?</h2><div className="contact-stack"><a className="email-link" href="mailto:nrgchugh@gmail.com">✉ nrgchugh@gmail.com <span>↗</span></a><a className="phone-link" href="tel:+917696090258">☎ +91 76960 90258 <span>↗</span></a><a className="resume-link" href={resumePdf} onClick={downloadResume}>▱ View resume <span>↗</span></a></div><div className="closing-links"><a href="https://github.com/Ukriyte" target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/AnuragChugh404" target="_blank" rel="noreferrer">LinkedIn</a></div></section>
     </main><footer className="portfolio-footer"><span>© {new Date().getFullYear()} Anurag Chugh</span><span>Built with React · Kept deliberately simple.</span></footer>
   </div>;
 }
