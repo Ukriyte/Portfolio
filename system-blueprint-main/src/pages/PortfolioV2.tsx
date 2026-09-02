@@ -1,5 +1,5 @@
 import "./PortfolioV2.css";
-import profilePhoto from "../assets/projects/IMG_20260903_022634.jpg";
+import profilePhoto from "../assets/projects/IMG-20260824-WA0072.jpg";
 
 const experiences = [
   { company: "Osfin.ai", role: "Software Development Engineer I", period: "Feb 2026 — Present", location: "Bengaluru, India", points: ["Built backend workflows for dispute and chargeback processing across UPI, IMPS, AEPS, and CBDC, enforcing payment-network rules, permissions, deadlines, and auditable state transitions.", "Automated bulk complaint creation from CSV files with row-level validation, configurable reason mapping, and fault isolation.", "Prevented duplicate financial operations under concurrent and stale requests using application-level pre-validation and database uniqueness constraints.", "Improved batch-platform resilience with retry paths, safe recovery for stuck executions, health probes, and backward-compatible Liquibase migrations.", "Integrated IDFC Bank CBS Hold APIs for balance enquiry, hold placement, recovery, and removal, including validation and downstream failure handling.", "Resolved production incidents across payment, batch, and external integrations through log correlation, database investigation, and Kubernetes diagnostics."] },
@@ -24,7 +24,7 @@ export function PortfolioV2() {
       <section className="hero-v2">
         <div className="hero-copy-block">
           <p className="eyebrow">SOFTWARE ENGINEER · BENGALURU</p>
-          <h1>Hi, I’m Anurag. <span className="wave">👋</span></h1>
+          <h1>Hi, I’m Anurag. <span className="wave">💻</span></h1>
           <p className="hero-copy">I build reliable backend systems that handle real-world scale with correctness, performance and clarity.</p>
           <div className="hero-links"><a href="mailto:nrgchugh@gmail.com">✉ Email ↗</a><a href="https://github.com/Ukriyte" target="_blank" rel="noreferrer">◉ GitHub ↗</a><a href="https://linkedin.com/in/AnuragChugh404" target="_blank" rel="noreferrer">▣ LinkedIn ↗</a><a href={resumeUrl} target="_blank" rel="noreferrer">▱ Resume ↗</a></div>
         </div>
@@ -41,7 +41,7 @@ export function PortfolioV2() {
 
       <section className="education-section" id="education"><p className="section-label">05 — EDUCATION</p><div><h2>B.Tech in Mechanical Engineering</h2><p className="company">Indian Institute of Technology, Roorkee · 2021 — 2025</p></div></section>
 
-      <section className="closing-section" id="contact"><p className="section-label">06 — SAY HELLO</p><h2>Have an interesting problem?</h2><div className="contact-stack"><a className="email-link" href="mailto:nrgchugh@gmail.com">nrgchugh@gmail.com <span>↗</span></a><a className="resume-link" href={resumeUrl} target="_blank" rel="noreferrer">View resume <span>↗</span></a></div><div className="closing-links"><a href="https://github.com/Ukriyte" target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/AnuragChugh404" target="_blank" rel="noreferrer">LinkedIn</a></div></section>
+      <section className="closing-section" id="contact"><p className="section-label">06 — SAY HELLO</p><h2>Have an interesting problem?</h2><div className="contact-stack"><a className="email-link" href="mailto:nrgchugh@gmail.com">✉ nrgchugh@gmail.com <span>↗</span></a><a className="phone-link" href="tel:+917696090258">☎ +91 76960 90258 <span>↗</span></a><a className="resume-link" href={resumeUrl} target="_blank" rel="noreferrer">▱ View resume <span>↗</span></a></div><div className="closing-links"><a href="https://github.com/Ukriyte" target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/AnuragChugh404" target="_blank" rel="noreferrer">LinkedIn</a></div></section>
     </main>
     <footer className="portfolio-footer"><span>© {new Date().getFullYear()} Anurag Chugh</span><span>Built with React · Kept deliberately simple.</span></footer>
   </div>;
