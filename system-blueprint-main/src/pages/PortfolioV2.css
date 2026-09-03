@@ -1,14 +1,466 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600&display=swap');
-.portfolio-v2{--ink:#111;--muted:#777;--line:#ddd;background:#fff;color:var(--ink);min-height:100vh;font-family:Inter,system-ui,sans-serif;line-height:1.55}.portfolio-v2 *{box-sizing:border-box}.portfolio-v2 a{color:inherit;text-decoration:none}.portfolio-nav,.portfolio-footer{max-width:1160px;margin:auto;padding:0 28px}.portfolio-nav{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.brand,.eyebrow,.section-label,.section-note,.stack,.project-number,.portfolio-footer{font-family:'DM Mono',monospace}.brand{font-size:15px;font-weight:500}.portfolio-nav nav{display:flex;gap:28px;font-size:13px;white-space:nowrap}.portfolio-nav nav a:hover,.hero-links a:hover,.closing-links a:hover{opacity:.55}.portfolio-v2 main{max-width:1160px;margin:auto;padding:0 28px}.hero-v2{min-height:600px;display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:70px;align-items:center;border-bottom:1px solid var(--line)}.hero-copy-block{padding:65px 0}.hero-photo-wrap{width:250px;height:320px;overflow:hidden;border-radius:24px}.hero-photo{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;filter:saturate(.86)}.eyebrow,.section-label,.section-note,.stack,.project-number{font-size:11px;letter-spacing:.05em;text-transform:uppercase}.eyebrow,.section-label{color:#555}.hero-v2 h1{font-size:clamp(60px,8.5vw,108px);line-height:.94;letter-spacing:-.075em;font-weight:500;margin:24px 0 30px}.wave{font-size:.32em;vertical-align:top;letter-spacing:0;margin-left:5px}.hero-copy{font-size:clamp(19px,2vw,27px);line-height:1.32;letter-spacing:-.025em;max-width:680px;margin:0}.hero-links{display:flex;gap:24px;flex-wrap:wrap;margin-top:38px;font-size:13px}.intro-grid,.content-section,.skills-section,.education-section,.closing-section{padding:105px 0;border-bottom:1px solid var(--line)}.intro-grid,.section-heading,.skills-section,.education-section{display:grid;grid-template-columns:28% 1fr;gap:7%}.large-copy{font-size:30px;line-height:1.28;letter-spacing:-.035em;margin:0 0 24px}.muted-copy{color:var(--muted);font-size:16px;max-width:650px}.section-heading{margin-bottom:55px}.section-note{color:#888;margin:0}.timeline-item,.project-card{display:grid;grid-template-columns:28% 1fr;gap:7%;padding:38px 0;border-top:1px solid var(--line)}.timeline-item:last-child,.project-card:last-child{border-bottom:1px solid var(--line)}.timeline-meta{font-family:'DM Mono',monospace;font-size:11px;color:#777;display:flex;flex-direction:column;gap:6px}.timeline-item h2,.project-card h2,.education-section h2{font-size:27px;letter-spacing:-.035em;font-weight:500;margin:0}.company{font-size:14px;color:#777;margin:5px 0 25px}.timeline-item li,.project-main li{margin:9px 0;color:#383838;font-size:14px;max-width:760px}.project-card{padding:44px 0}.project-title-row{display:flex;justify-content:space-between;align-items:start}.project-title-row>a{font-size:27px}.project-description{font-size:17px;max-width:700px}.stack{color:#777}.skill-grid{display:flex;flex-wrap:wrap;gap:9px}.skill-grid span{border:1px solid #ccc;border-radius:100px;padding:9px 14px;font-size:13px}.closing-section{padding:135px 0 120px}.closing-section h2{font-size:clamp(42px,7vw,80px);line-height:1;letter-spacing:-.065em;font-weight:500;max-width:750px;margin:35px 0 48px}.contact-stack{display:flex;gap:28px;flex-wrap:wrap}.email-link,.phone-link,.resume-link{font-size:20px;border-bottom:1px solid #111;padding-bottom:4px}.closing-links{display:flex;gap:25px;font-size:13px;margin-top:52px}.portfolio-footer{padding:26px 28px;display:flex;justify-content:space-between;color:#777;font-size:10px;text-transform:uppercase;letter-spacing:.04em}
-@media(max-width:800px){.portfolio-nav{height:64px;padding:0 20px}.portfolio-nav nav{gap:18px;overflow-x:auto;max-width:78vw;scrollbar-width:none}.portfolio-nav nav::-webkit-scrollbar{display:none}.portfolio-v2 main{padding:0 20px}.hero-v2{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:20px;align-items:start;padding:64px 0 50px}.hero-copy-block{padding:0}.hero-photo-wrap{width:150px;height:205px;border-radius:20px;margin-top:10px}.hero-photo{object-position:center 34%}.hero-v2 h1{font-size:clamp(48px,13vw,68px);margin:18px 0 24px}.hero-copy{font-size:19px}.hero-links{gap:12px 16px;margin-top:28px;font-size:12px}.hero-links a{white-space:nowrap}.intro-grid,.section-heading,.timeline-item,.project-card,.skills-section,.education-section{grid-template-columns:1fr;gap:25px}.intro-grid,.content-section,.skills-section,.education-section,.closing-section{padding:72px 0}.section-heading{margin-bottom:34px}.large-copy{font-size:24px}.timeline-item{padding:30px 0}.timeline-meta{order:2}.project-card{gap:16px}.project-number{order:-1}.closing-section h2{font-size:49px}.contact-stack{display:flex;flex-direction:column;align-items:flex-start;gap:16px}.email-link,.phone-link,.resume-link{font-size:17px}.portfolio-footer{padding:22px 20px;display:block}.portfolio-footer span{display:block;margin:5px 0}}
-/* =========================
-   PHONE — dedicated layout
-   ========================= */
+
+.portfolio-v2 {
+  --ink: #111;
+  --muted: #777;
+  --line: #ddd;
+  background: #fff;
+  color: var(--ink);
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.55;
+}
+
+.portfolio-v2 * {
+  box-sizing: border-box;
+}
+
+.portfolio-v2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.portfolio-nav,
+.portfolio-footer {
+  max-width: 1160px;
+  margin: auto;
+  padding: 0 28px;
+}
+
+.portfolio-nav {
+  height: 76px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand,
+.eyebrow,
+.section-label,
+.section-note,
+.stack,
+.project-number,
+.portfolio-footer {
+  font-family: 'DM Mono', monospace;
+}
+
+.brand {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.portfolio-nav nav {
+  display: flex;
+  gap: 28px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.portfolio-nav nav a:hover,
+.hero-links a:hover,
+.closing-links a:hover {
+  opacity: .55;
+}
+
+.portfolio-v2 main {
+  max-width: 1160px;
+  margin: auto;
+  padding: 0 28px;
+}
+
+.hero-v2 {
+  min-height: 600px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 70px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-copy-block {
+  padding: 65px 0;
+}
+
+.hero-photo-wrap {
+  width: 250px;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  filter: saturate(.86);
+}
+
+.eyebrow,
+.section-label,
+.section-note,
+.stack,
+.project-number {
+  font-size: 11px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.section-label {
+  color: #555;
+}
+
+.hero-v2 h1 {
+  font-size: clamp(60px, 8.5vw, 108px);
+  line-height: .94;
+  letter-spacing: -.075em;
+  font-weight: 500;
+  margin: 24px 0 30px;
+}
+
+.wave {
+  font-size: .32em;
+  vertical-align: top;
+  letter-spacing: 0;
+  margin-left: 5px;
+}
+
+.hero-copy {
+  font-size: clamp(19px, 2vw, 27px);
+  line-height: 1.32;
+  letter-spacing: -.025em;
+  max-width: 680px;
+  margin: 0;
+}
+
+.hero-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 38px;
+  font-size: 13px;
+}
+
+.intro-grid,
+.content-section,
+.skills-section,
+.education-section,
+.closing-section {
+  padding: 105px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.intro-grid,
+.section-heading,
+.skills-section,
+.education-section {
+  display: grid;
+  grid-template-columns: 28% 1fr;
+  gap: 7%;
+}
+
+.large-copy {
+  font-size: 30px;
+  line-height: 1.28;
+  letter-spacing: -.035em;
+  margin: 0 0 24px;
+}
+
+.muted-copy {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 650px;
+}
+
+.section-heading {
+  margin-bottom: 55px;
+}
+
+.section-note {
+  color: #888;
+  margin: 0;
+}
+
+.timeline-item,
+.project-card {
+  display: grid;
+  grid-template-columns: 28% 1fr;
+  gap: 7%;
+  padding: 38px 0;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-item:last-child,
+.project-card:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #777;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timeline-item h2,
+.project-card h2,
+.education-section h2 {
+  font-size: 27px;
+  letter-spacing: -.035em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.company {
+  font-size: 14px;
+  color: #777;
+  margin: 5px 0 25px;
+}
+
+.timeline-item li,
+.project-main li {
+  margin: 9px 0;
+  color: #383838;
+  font-size: 14px;
+  max-width: 760px;
+}
+
+.project-card {
+  padding: 44px 0;
+}
+
+.project-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.project-title-row > a {
+  font-size: 27px;
+}
+
+.project-description {
+  font-size: 17px;
+  max-width: 700px;
+}
+
+.stack {
+  color: #777;
+}
+
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.skill-grid span {
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  padding: 9px 14px;
+  font-size: 13px;
+}
+
+.closing-section {
+  padding: 135px 0 120px;
+}
+
+.closing-section h2 {
+  font-size: clamp(42px, 7vw, 80px);
+  line-height: 1;
+  letter-spacing: -.065em;
+  font-weight: 500;
+  max-width: 750px;
+  margin: 35px 0 48px;
+}
+
+.contact-stack {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.email-link,
+.phone-link,
+.resume-link {
+  font-size: 20px;
+  border-bottom: 1px solid #111;
+  padding-bottom: 4px;
+}
+
+.closing-links {
+  display: flex;
+  gap: 25px;
+  font-size: 13px;
+  margin-top: 52px;
+}
+
+.portfolio-footer {
+  padding: 26px 28px;
+  display: flex;
+  justify-content: space-between;
+  color: #777;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .portfolio-nav {
+    height: 64px;
+    padding: 0 20px;
+  }
+
+  .portfolio-nav nav {
+    gap: 18px;
+    overflow-x: auto;
+    max-width: 78vw;
+    scrollbar-width: none;
+  }
+
+  .portfolio-nav nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-v2 main {
+    padding: 0 20px;
+  }
+
+  .hero-v2 {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 150px;
+    gap: 20px;
+    align-items: start;
+    padding: 64px 0 50px;
+  }
+
+  .hero-copy-block {
+    padding: 0;
+  }
+
+  .hero-photo-wrap {
+    width: 150px;
+    height: 205px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  .hero-photo {
+    object-position: center 34%;
+  }
+
+  .hero-v2 h1 {
+    font-size: clamp(48px, 13vw, 68px);
+    margin: 18px 0 24px;
+  }
+
+  .hero-copy {
+    font-size: 19px;
+  }
+
+  .hero-links {
+    gap: 12px 16px;
+    margin-top: 28px;
+    font-size: 12px;
+  }
+
+  .hero-links a {
+    white-space: nowrap;
+  }
+
+  .intro-grid,
+  .section-heading,
+  .timeline-item,
+  .project-card,
+  .skills-section,
+  .education-section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .intro-grid,
+  .content-section,
+  .skills-section,
+  .education-section,
+  .closing-section {
+    padding: 72px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 34px;
+  }
+
+  .large-copy {
+    font-size: 24px;
+  }
+
+  .timeline-item {
+    padding: 30px 0;
+  }
+
+  .timeline-meta {
+    order: 2;
+  }
+
+  .project-card {
+    gap: 16px;
+  }
+
+  .project-number {
+    order: -1;
+  }
+
+  .closing-section h2 {
+    font-size: 49px;
+  }
+
+  .contact-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .email-link,
+  .phone-link,
+  .resume-link {
+    font-size: 17px;
+  }
+
+  .portfolio-footer {
+    padding: 22px 20px;
+    display: block;
+  }
+
+  .portfolio-footer span {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+
+/* =========================================================
+   PHONE — DEDICATED MOBILE LAYOUT
+   ========================================================= */
+
 @media (max-width: 560px) {
 
   .portfolio-v2 main {
     padding: 0 18px;
   }
+
 
   /* ---------- Header ---------- */
 
@@ -59,7 +511,6 @@
     display: contents;
   }
 
-  /* Photo comes first on phone */
   .hero-photo-wrap {
     order: 1;
     position: static;
@@ -106,19 +557,29 @@
     line-height: 1.38;
   }
 
-  /* Clean 2-column links */
+
+  /* ---------- HERO LINKS ----------
+     Keep email / GitHub / LinkedIn etc.
+     compact and prevent individual links
+     from breaking into multiple lines.
+  */
+
   .hero-links {
     order: 5;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px 12px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px 8px;
     margin-top: 30px;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .hero-links a {
+    display: block;
+    min-width: 0;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 
@@ -274,10 +735,21 @@
   .resume-link {
     font-size: 16px;
     max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .closing-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
     margin-top: 42px;
+    font-size: 12px;
+  }
+
+  .closing-links a {
+    white-space: nowrap;
   }
 
 
@@ -297,7 +769,10 @@
 }
 
 
-/* Extra-small phones */
+/* =========================================================
+   EXTRA-SMALL PHONES
+   ========================================================= */
+
 @media (max-width: 360px) {
 
   .portfolio-v2 main {
@@ -325,12 +800,30 @@
     font-size: 17px;
   }
 
+  /*
+     IMPORTANT:
+     Keep links in two columns even on very small phones.
+     Do NOT change this back to 1fr.
+  */
   .hero-links {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px 6px;
+    font-size: 10px;
+  }
+
+  .hero-links a {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .closing-section h2 {
     font-size: 39px;
+  }
+
+  .closing-links {
+    gap: 10px 16px;
+    font-size: 11px;
   }
 }
