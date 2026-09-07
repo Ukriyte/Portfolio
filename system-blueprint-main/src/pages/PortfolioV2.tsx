@@ -31,7 +31,28 @@ export function PortfolioV2() {
     <header className="portfolio-nav"><a className="brand" href="#top">AC.</a><nav><a href="#about">About</a><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a><a href={resumePdf} onClick={downloadResume}>Resume ↗</a></nav></header>
     <main id="top">
       <section className="hero-v2"><div className="hero-copy-block"><p className="eyebrow">SOFTWARE ENGINEER · BENGALURU</p><h1>Hi, I’m Anurag. <span className="wave">💻</span></h1><p className="hero-copy">I build reliable backend systems that handle real-world scale with correctness, performance and clarity.</p><div className="hero-links"><a href="mailto:nrgchugh@gmail.com">✉ Email ↗</a><a href="https://github.com/Ukriyte" target="_blank" rel="noreferrer">◉ GitHub ↗</a><a href="https://linkedin.com/in/AnuragChugh404" target="_blank" rel="noreferrer">▣ LinkedIn ↗</a><a href={resumePdf} onClick={downloadResume}>▱ Resume ↗</a></div></div><div className="hero-photo-wrap"><img src={profilePhoto} alt="Anurag Chugh" className="hero-photo" /></div></section>
-      <section className="intro-grid" id="about"><p className="section-label">01 — ABOUT</p><div><p className="large-copy">Software engineer with a B.Tech in Mechanical Engineering from IIT Roorkee. I enjoy turning messy, high-volume workflows into explicit systems with strong invariants and predictable failure modes.</p><p className="muted-copy">Outside work, I like building systems from first principles — from multiplayer game engines to infrastructure and AI tooling.</p></div></section>
+
+      <section className="intro-grid" id="about">
+  <p className="section-label">01 — ABOUT</p>
+  <div>
+    <p className="large-copy">
+      Backend engineer building reliable systems for fintech. Mostly interested
+      in the parts of software that are easy to get wrong.
+    </p>
+    <p className="muted-copy">
+      Outside work, I build things that help me understand how systems work —
+      from multiplayer games to infrastructure and AI tools.
+    </p>
+  </div>
+</section>
+      
+      
+      
+      
+      
+      
+      
+      
       <section className="content-section" id="work"><div className="section-heading"><p className="section-label">02 — EXPERIENCE</p><p className="section-note">Production systems</p></div><div className="timeline">{experiences.map(item => <article className="timeline-item" key={item.company}><div className="timeline-meta"><span>{item.period}</span><span>{item.location}</span></div><div><h2>{item.role}</h2><p className="company">{item.company}</p><ul>{item.points.map(point => <li key={point}>{point}</li>)}</ul></div></article>)}</div></section>
       <section className="content-section" id="projects"><div className="section-heading"><p className="section-label">03 — SELECTED PROJECTS</p><p className="section-note">Things I built</p></div><div className="project-list">{projects.map((project, index) => <article className="project-card" key={project.name}><div className="project-number">0{index + 1}</div><div className="project-main"><div className="project-title-row"><div><h2>{project.name}</h2><p className="company">{project.subtitle}</p></div><a href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.name} on GitHub`}>↗</a></div><p className="project-description">{project.description}</p><p className="stack">{project.stack}</p><ul>{project.points.map(point => <li key={point}>{point}</li>)}</ul></div></article>)}</div></section>
       <section className="skills-section"><p className="section-label">04 — TOOLKIT</p><div className="skill-grid">{skills.map(skill => <span key={skill}>{skill}</span>)}</div></section>
