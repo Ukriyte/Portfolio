@@ -1,6 +1,6 @@
 import "./PortfolioV2.css";
 import profilePhoto from "../assets/projects/IMG-20260824-WA0072.jpg";
-import resumePdf from "../assets/projects/Anurag_Chugh_Resume .pdf";
+import resumePdf from "../assets/resume/Anurag_Chugh_Resume.pdf";
 
 const experiences = [
   { company: "Osfin.ai", role: "Software Development Engineer I", period: "Feb 2026 — Present", location: "Bengaluru, India", points: ["Built backend workflows for dispute and chargeback processing across UPI, IMPS, AEPS, and CBDC, enforcing payment-network rules, permissions, deadlines, and auditable state transitions.", "Automated bulk complaint creation from CSV files with row-level validation, configurable reason mapping, and fault isolation.", "Prevented duplicate financial operations under concurrent and stale requests using application-level pre-validation and database uniqueness constraints.", "Improved batch-platform resilience with retry paths, safe recovery for stuck executions, health probes, and backward-compatible Liquibase migrations.", "Integrated IDFC Bank CBS Hold APIs for balance enquiry, hold placement, recovery, and removal, including validation and downstream failure handling.", "Resolved production incidents across payment, batch, and external integrations through log correlation, database investigation, and Kubernetes diagnostics."] },
