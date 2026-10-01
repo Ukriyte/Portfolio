@@ -1,10 +1,35 @@
 import "./PortfolioV2.css";
 import profilePhoto from "../assets/projects/IMG-20260824-WA0072.jpg";
-import resumePdf from "../assets/projects/Anurag_Chugh_Resume .pdf";
+import resumePdf from "../assets/projects/Anurag Chugh Resume.pdf";
 
 const experiences = [
-  { company: "Osfin.ai", role: "Software Development Engineer I", period: "Feb 2026 — Present", location: "Bengaluru, India", points: ["Built backend workflows for dispute and chargeback processing across UPI, IMPS, AEPS, and CBDC, enforcing payment-network rules, permissions, deadlines, and auditable state transitions.", "Automated bulk complaint creation from CSV files with row-level validation, configurable reason mapping, and fault isolation.", "Prevented duplicate financial operations under concurrent and stale requests using application-level pre-validation and database uniqueness constraints.", "Improved batch-platform resilience with retry paths, safe recovery for stuck executions, health probes, and backward-compatible Liquibase migrations.", "Integrated IDFC Bank CBS Hold APIs for balance enquiry, hold placement, recovery, and removal, including validation and downstream failure handling.", "Resolved production incidents across payment, batch, and external integrations through log correlation, database investigation, and Kubernetes diagnostics."] },
-  { company: "E-Ring Inc.", role: "Software Engineer I", period: "Jul 2025 — Nov 2025", location: "Hyderabad, India", points: ["Re-architected a county-wide ETL workflow using BCP-driven pipelines, reducing processing time for 1M+ records from 8 hours to 45 minutes.", "Developed T-SQL monitoring and reconciliation scripts for billing workflows, reducing manual validation effort and improving audit readiness."] }
+  {
+    company: "Osfin.ai",
+    role: "Software Development Engineer I",
+    period: "Feb 2026 — Present",
+    location: "Bengaluru, India",
+    points: [
+      "Built backend workflows for dispute and chargeback processing across UPI, IMPS, AEPS, and CBDC, enforcing payment-network rules, user permissions, deadlines, and auditable state transitions.",
+      "Extended the complaint-processing platform to ICCW and NCMC by evolving shared network-resolution, transaction-search, and validation abstractions, preserving existing raise workflows without duplicating network-specific business logic.",
+      "Automated bulk complaint creation from CSV files, replacing one-at-a-time processing with row-level validation, configurable reason mapping, and fault isolation so invalid records do not block an entire upload; covered the implementation with 45 unit tests.",
+      "Prevented duplicate financial operations during concurrent and stale requests by combining application-level pre-validation with database uniqueness constraints and deterministic error handling.",
+      "Improved batch-platform resilience by adding retry paths and safe recovery for stuck execution states, operational health probes, and backward-compatible Liquibase migrations.",
+      "Co-designed an idempotent desired-state reconciler for clustered Quartz, aligning database-backed job configuration with live scheduler triggers to enable restart-safe runtime toggles and eliminate recurring overhead from disabled jobs.",
+      "Redesigned a shared filter-data pipeline to correctly query heterogeneous tables and database views while preserving source-specific configuration, reducing failure-prone branching and simplifying maintenance.",
+      "Integrated IDFC Bank's CBS Hold APIs for balance enquiry, hold placement, recovery, and removal, with validation, downstream failure handling, and reconciliation support.",
+      "Resolved production incidents across payment, batch, and external-integration services through log correlation, database investigation, and controlled fixes; diagnosed Kubernetes pod, configuration, health-check, and service-connectivity failures.",
+    ],
+  },
+  {
+    company: "E-Ring Inc.",
+    role: "Software Engineer I",
+    period: "Jul 2025 — Nov 2025",
+    location: "Hyderabad, India",
+    points: [
+      "Re-architected a county-wide ETL workflow using BCP-driven pipelines, reducing processing time for 1M+ records from 8 hours to 45 minutes.",
+      "Developed T-SQL monitoring and reconciliation scripts for billing workflows, reducing manual validation effort and improving audit readiness.",
+    ],
+  },
 ];
 const projects = [
   { name: "PokerNight", subtitle: "Real-Time Multiplayer Poker", stack: "Java 21 · Spring Boot · WebSockets/STOMP", href: "https://github.com/Ukriyte/PokerNight", description: "A server-authoritative Texas Hold’em platform designed around correctness under concurrency, reconnects, duplicate delivery, and private game state.", points: ["Multi-room architecture with framework-free game engine, application, persistence, and transport modules connected through explicit ports and immutable contracts.", "Complete Hold’em lifecycle including forced blinds, betting streets, folds, raises, all-ins, side pots, showdown evaluation, dealer rotation, and chip-conservation invariants.", "Per-room command serialization, 24-hour idempotency receipts, and reconnect snapshots for concurrent actions and browser refreshes.", "Authenticated REST and WebSocket/STOMP boundaries with public room topics and private player queues to prevent state leakage.", "Bots use immutable turn contexts and submit decisions through the same validated command path as human players."] },
