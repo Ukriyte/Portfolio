@@ -1,4 +1,4 @@
-import resumePdf from "@/assets/resume/Anurag_Chugh_Resume.pdf";
+import resumePdf from "@/assets/projects/Anurag Chugh Resume.pdf";
 
 export const profile = {
   name: "Anurag Chugh",
